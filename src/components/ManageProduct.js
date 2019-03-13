@@ -23,7 +23,7 @@ class ManageProduct extends Component{
     }
 
     addProduct = () => {
-        const namanya = this.name.value
+        const namanya = this.name.valuegit
         const descnya = this.desc.value
         const pricenya = this.price.value
         const pictnya = this.pict.value
@@ -35,6 +35,7 @@ class ManageProduct extends Component{
         this.onAddProd(namanya, descnya, pricenya, pictnya)
         
     }
+    // commenku
 
     onAddProd = (namanya, descnya, pricenya, pictnya) => {
           axios.post("http://localhost:1996/product",{
