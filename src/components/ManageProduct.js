@@ -23,7 +23,7 @@ class ManageProduct extends Component{
     }
 
     addProduct = () => {
-        const namanya = this.name.valuegit
+        const namanya = this.name.value
         const descnya = this.desc.value
         const pricenya = this.price.value
         const pictnya = this.pict.value
@@ -45,7 +45,7 @@ class ManageProduct extends Component{
             src: pictnya
           }).then(res => {
             this.getProduct()
-          })
+          }) 
         
       }
 
