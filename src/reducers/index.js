@@ -17,7 +17,7 @@ const AuthReducer = (state = init, action) => {
       };
 
     case "LOGOUT_SUCCESS":
-      window.location.pathname="/"
+      // window.location.pathname="/"
       return (state = init); //atau {...state, ...init} property yg di state ditimpa dgn property init (kosong)
 
     case "AUTH_ERROR":

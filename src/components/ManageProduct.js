@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 // import {onAddProd} from '../actions'
 
@@ -73,48 +74,56 @@ class ManageProduct extends Component{
     }
     
     render(){
-        return(
-            <div className="container">
-                <h1 className="display-4 text-center">ManageProduct</h1>
-                <table className="table table-hover mb-5">
-                        <thead>
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">NAME</th>
-                                <th scope="col">DESC</th>
-                                <th scope="col">PRICE</th>
-                                <th scope="col">PICTURE</th>
-                                <th scope="col">ACTION</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.renderList()}
-                        </tbody>
-                    </table>
-                    <h1 className="display-4 text-center">input Product</h1>
-                    <table className="table text-center">
-                        <thead>
-                            <tr>
-                                <th scope="col">NAME</th>
-                                <th scope="col">DESC</th>
-                                <th scope="col">PRICE</th>
-                                <th scope="col">PICTURE</th>
-                                <th scope="col">ACTION</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="col"><input ref={input => this.name = input} className="form-control" type="text" /></th>
-                                <th scope="col"><input ref={input => this.desc = input} className="form-control" type="text" /></th>
-                                <th scope="col"><input ref={input => this.price = input} className="form-control" type="text" /></th>
-                                <th scope="col"><input ref={input => this.pict = input} className="form-control" type="text" /></th>
-                                <th scope="col"><button onClick={this.addProduct} className="btn btn-outline-warning" >Add</button></th>
-                            </tr>
-                        </tbody>
-                    </table>
-            </div>
-        )
+        if(this.props.user !== ""){
+            return(
+                <div className="container">
+                    <h1 className="display-4 text-center">ManageProduct</h1>
+                    <table className="table table-hover mb-5">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">NAME</th>
+                                    <th scope="col">DESC</th>
+                                    <th scope="col">PRICE</th>
+                                    <th scope="col">PICTURE</th>
+                                    <th scope="col">ACTION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.renderList()}
+                            </tbody>
+                        </table>
+                        <h1 className="display-4 text-center">input Product</h1>
+                        <table className="table text-center">
+                            <thead>
+                                <tr>
+                                    <th scope="col">NAME</th>
+                                    <th scope="col">DESC</th>
+                                    <th scope="col">PRICE</th>
+                                    <th scope="col">PICTURE</th>
+                                    <th scope="col">ACTION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="col"><input ref={input => this.name = input} className="form-control" type="text" /></th>
+                                    <th scope="col"><input ref={input => this.desc = input} className="form-control" type="text" /></th>
+                                    <th scope="col"><input ref={input => this.price = input} className="form-control" type="text" /></th>
+                                    <th scope="col"><input ref={input => this.pict = input} className="form-control" type="text" /></th>
+                                    <th scope="col"><button onClick={this.addProduct} className="btn btn-outline-warning" >Add</button></th>
+                                </tr>
+                            </tbody>
+                        </table>
+                </div>
+            )
+        } else {
+            return <Redirect to="/"/>
+        }
+        
     }
 }
 
-export default connect ()(ManageProduct)
+const mapStateToProps = state => {
+        return{user: state.auth.username}
+}
+export default connect (mapStateToProps)(ManageProduct)
