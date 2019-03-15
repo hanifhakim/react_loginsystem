@@ -8,7 +8,8 @@ import {connect} from 'react-redux'
 class ManageProduct extends Component{
 
     state ={
-        products: []
+        products: [],
+        selectedId: 0
     }
 
     componentDidMount(){
@@ -19,7 +20,7 @@ class ManageProduct extends Component{
     getProduct=()=>{
         axios.get("http://localhost:1996/product")
         .then(res => {
-            this.setState({products: res.data})
+            this.setState({products: res.data, selectedId:0})
         })
     }
 
@@ -46,6 +47,10 @@ class ManageProduct extends Component{
             src: pictnya
           }).then(res => {
             this.getProduct()
+            this.name.value=""
+            this.desc.value=""
+            this.price.value=""
+            this.pict.value=""
           }) 
         
       }
@@ -55,21 +60,65 @@ class ManageProduct extends Component{
             this.getProduct()
           })
     }  
+
+    onEdit = (i) => {
+        this.setState({selectedId: i})
+    }
+   
+    onSaveItem = (i) => {
+        const nama = this.editName.value
+        const desk = this.editDesc.value
+        const harga = parseInt(this.editPrice.value)
+        const sumber = this.editImg.value
+        axios.put('http://localhost:1996/product/' + i, {
+            name: nama,
+            desc: desk,
+            price: harga,
+            src:sumber
+        }).then(() => {
+            this.getProduct()
+        })
+    }
+
     renderList = () => {
-        return this.state.products.map(item => {
+        return this.state.products.map((item,i) => {
+           if(item.id !== this.state.selectedId){
             return (
                 <tr key={item.id}>
-                    <td>{item.id}</td>
+                    <td>{i + 1}</td>
                     <td>{item.name}</td>
                     <td>{item.desc}</td>
                     <td>{item.price}</td>
                     <td><img className="list" src={item.src} alt={item.desc}></img></td>
                     <td>
-                        <button className="btn btn-primary mr-2">Edit</button>
+                        <button onClick ={() => {this.onEdit(item.id)}}className="btn btn-primary mr-2">Edit</button>
                         <button onClick={() => {this.onDelete(item.id)}}className="btn btn-danger">Delete</button>
                     </td>
                 </tr>
             )
+           } else {
+               return (
+                   <tr key={item.id}>
+                       <td>{item.id}</td>
+                       <td>
+                           <input className="form-control" ref={input => { this.editName = input }} type="text" defaultValue={item.name} />
+                       </td>
+                       <td>
+                           <input className="form-control" ref={input => { this.editDesc = input }} type="text" defaultValue={item.desc} />
+                       </td>
+                       <td>
+                           <input className="form-control" ref={input => { this.editPrice = input }} type="text" defaultValue={item.price} />
+                       </td>
+                       <td>
+                           <input className="form-control" ref={input => { this.editImg = input }} type="text" defaultValue={item.src} />
+                       </td>
+                       <td>
+                           <button onClick={() => { this.onSaveItem(item.id) }} className="btn btn-primary mb-2">Save</button>
+                           <button onClick={() => { this.setState({ selectedId: 0 }) }} className="btn btn-danger">Cancel</button>
+                       </td>
+                   </tr>
+               )
+           }
         })
     }
     
