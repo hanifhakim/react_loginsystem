@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { onLogoutUser } from "../actions";
 
@@ -12,10 +12,10 @@ class Header extends Component {
     const { username } = this.props.user;
     if (username === "") {
       return (
-        <nav className="navbar navbar-expand-sm navbar-light bg-light mb-3">
+        <nav className="navbar sticky-top navbar-expand-sm navbar-light bg-light mb-3">
           <div className="container">
             <Link className="navbar-brand" to="/">
-              TOKONGAPAK
+              RSCH COPY
             </Link>
             <button
               className="navbar-toggler"
@@ -60,10 +60,10 @@ class Header extends Component {
       return (
         <div>
           {/* <Redirect to="/" /> */}
-          <nav className="navbar sticky-top navbar-expand-md navbar-light bg-light mb-3">
+          <nav className="navbar sticky-top navbar-expand-sm navbar-dark bg-info mb-3">
             <div className="container">
-              <Link className="navbar-brand" to="/">
-                TOKONGAPAK
+              <Link className="navbar-brand text-dark" to="/">
+                RSCH COPY
               </Link>
               <button
                 className="navbar-toggler"
@@ -80,32 +80,32 @@ class Header extends Component {
                     className="form-control mr-2"
                     placeholder="Search"
                   />
-                  <button className="btn btn-outline-success">Search</button>
+                  <button className="btn btn-outline-dark">Search</button>
                 </form>
                 <ul className="navbar-nav ml-auto col-12 col-md-5">
                   <li className="nav-item mt-2">
-                    <Link className="nav-link" to="/">
+                    <Link className="nav-link text-dark" to="/">
                       All Product
                     </Link>
                   </li>
                   <li className="nav-item dropdown mt-2">
                     <Link
                       to="/"
-                      className="nav-link dropdown-toggle"
+                      className="nav-link dropdown-toggle text-capitalize text-dark"
                       data-toggle="dropdown"
                     >
                       Hallo {username}
                     </Link>
                     <div className="dropdown-menu">
-                      <Link to="/manageproduct" className="dropdown-item">
+                      <Link to="/manageproduct" className="dropdown-item text-dark">
                         Manage Product
                       </Link>
-                      <Link to="/" className="dropdown-item">
-                        Link 2
+                      <Link to="/cart" className="dropdown-item text-dark">
+                        Cart
                       </Link>
                       <button
                         onClick={this.props.onLogoutUser}
-                        className="dropdown-item"
+                        className="dropdown-item text-dark"
                       >
                         Logout
                       </button>

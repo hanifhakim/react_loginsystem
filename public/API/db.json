@@ -1,0 +1,200 @@
+{
+  "users": [
+    {
+      "username": "haniful",
+      "email": "hahaha@gmail.com",
+      "password": "satu",
+      "id": 1
+    },
+    {
+      "username": "hakim",
+      "email": "hahaha@gmail.com",
+      "password": "satu",
+      "id": 2
+    },
+    {
+      "username": "hakimun",
+      "email": "hanifulhakim@hanif.hakim",
+      "password": "dua",
+      "id": 3
+    }
+  ],
+  "product": [
+    {
+      "name": "T-Shirt O-Neck Black",
+      "desc": "llorem ipsum dolor sir amet, vconatectus labandito ala pasto",
+      "price": 120000,
+      "src": "https://manage.schofficial.com/assets/images/product/blast-ss-black-2.jpg",
+      "id": 1
+    },
+    {
+      "name": "T-Shirt O-Neck Blue",
+      "desc": "llorem ipsum dolor sir amet, vconatectus labandito ala pasto",
+      "price": 90000,
+      "src": "https://manage.schofficial.com/assets/images/product/minor-praxis-ss-dark-turquoise-2.jpg",
+      "id": 2
+    },
+    {
+      "name": "T-shirt Oblong Blaster",
+      "desc": "llorem ipsum dolor sir amet, vconatectus labandito ala pasto",
+      "price": 85000,
+      "src": "https://manage.schofficial.com/assets/images/product/redmund-ss-white-brown-stripes-2.jpg",
+      "id": 5
+    },
+    {
+      "name": "T-shirt Pink",
+      "desc": "llorem ipsum dolor sir amet, vconatectus labandito ala pasto",
+      "price": 110000,
+      "src": "https://manage.schofficial.com/assets/images/product/wood-camp-ss-yellow-2.jpg",
+      "id": 6
+    },
+    {
+      "name": "Kemeja Lengan Pendek",
+      "desc": "llorem ipsum dolor sir amet, vconatectus labandito ala pasto",
+      "price": 210000,
+      "src": "https://manage.schofficial.com/assets/images/product/aspen-ssh-grey-2.jpg",
+      "id": 7
+    },
+    {
+      "name": "Hoodie Navy Blue ",
+      "desc": "llorem ipsum dolor sir amet, vconatectus labandito ala pasto",
+      "price": 350000,
+      "src": "https://manage.schofficial.com/assets/images/product/brich-zh-navy-blue-2.jpg",
+      "id": 8
+    },
+    {
+      "name": "Jacket Black",
+      "desc": "llorem ipsum dolor sir amet, vconatectus labandito ala pasto",
+      "price": 370000,
+      "src": "https://manage.schofficial.com/assets/images/product/dustpan-crj-black-2.jpg",
+      "id": 9
+    },
+    {
+      "name": "Waistbag",
+      "desc": "llorem ipsum dolor sir amet, vconatectus labandito ala pasto",
+      "price": 180000,
+      "src": "https://manage.schofficial.com/assets/images/product/frevent-wtb-brown-2.jpg",
+      "id": 10
+    },
+    {
+      "name": "Backpack",
+      "desc": "llorem ipsum dolor sir amet, vconatectus labandito ala pasto",
+      "price": 270000,
+      "src": "https://manage.schofficial.com/assets/images/product/skelly-bpb-grey-2.jpg",
+      "id": 11
+    },
+    {
+      "name": "Sepatu Santai",
+      "desc": "llorem ipsum dolor sir amet, vconatectus labandito ala pasto",
+      "price": 200000,
+      "src": "https://manage.schofficial.com/assets/images/product/casual-shoes-mate-black-2.jpg",
+      "id": 13
+    },
+    {
+      "name": "Topi Golf",
+      "desc": "llorem ipsum dolor sir amet, vconatectus labandito ala pasto",
+      "price": 70000,
+      "src": "https://manage.schofficial.com/assets/images/product/golfe-gfc-navy-2.jpg",
+      "id": 14
+    },
+    {
+      "name": "Dompet Kulit",
+      "desc": "llorem ipsum dolor sir amet, vconatectus labandito ala pasto",
+      "price": 120000,
+      "src": "https://manage.schofficial.com/assets/images/product/dafk.2-vrl-black-2.jpg",
+      "id": 15
+    }
+  ],
+  "cart": [
+    {
+      "productId": 10,
+      "username": "hakim",
+      "quantity": 1,
+      "name": "Waistbag",
+      "desc": "llorem ipsum dolor sir amet, vconatectus labandito ala pasto",
+      "price": 180000,
+      "src": "https://manage.schofficial.com/assets/images/product/frevent-wtb-brown-2.jpg",
+      "id": 2
+    },
+    {
+      "productId": 5,
+      "username": "hakim",
+      "quantity": 2,
+      "name": "T-shirt Oblong Blaster",
+      "desc": "llorem ipsum dolor sir amet, vconatectus labandito ala pasto",
+      "price": 85000,
+      "src": "https://manage.schofficial.com/assets/images/product/redmund-ss-white-brown-stripes-2.jpg",
+      "id": 4
+    },
+    {
+      "productId": 15,
+      "username": "hakim",
+      "quantity": 2,
+      "name": "Dompet Kulit",
+      "desc": "llorem ipsum dolor sir amet, vconatectus labandito ala pasto",
+      "price": 120000,
+      "src": "https://manage.schofficial.com/assets/images/product/dafk.2-vrl-black-2.jpg",
+      "id": 5
+    },
+    {
+      "productId": 9,
+      "username": "hakimun",
+      "quantity": 2,
+      "name": "Jacket Black",
+      "desc": "llorem ipsum dolor sir amet, vconatectus labandito ala pasto",
+      "price": 370000,
+      "src": "https://manage.schofficial.com/assets/images/product/dustpan-crj-black-2.jpg",
+      "id": 8
+    },
+    {
+      "productId": 1,
+      "username": "hakimun",
+      "quantity": 4,
+      "name": "T-Shirt O-Neck Black",
+      "desc": "llorem ipsum dolor sir amet, vconatectus labandito ala pasto",
+      "price": 120000,
+      "src": "https://manage.schofficial.com/assets/images/product/blast-ss-black-2.jpg",
+      "id": 9
+    },
+    {
+      "productId": 6,
+      "username": "hakimun",
+      "quantity": 1,
+      "name": "T-shirt Pink",
+      "desc": "llorem ipsum dolor sir amet, vconatectus labandito ala pasto",
+      "price": 110000,
+      "src": "https://manage.schofficial.com/assets/images/product/wood-camp-ss-yellow-2.jpg",
+      "id": 10
+    },
+    {
+      "productId": 8,
+      "username": "hakim",
+      "quantity": 1,
+      "name": "Hoodie Navy Blue ",
+      "desc": "llorem ipsum dolor sir amet, vconatectus labandito ala pasto",
+      "price": 350000,
+      "src": "https://manage.schofficial.com/assets/images/product/brich-zh-navy-blue-2.jpg",
+      "id": 11
+    },
+    {
+      "productId": 11,
+      "username": "haniful",
+      "quantity": 2,
+      "name": "Backpack",
+      "desc": "llorem ipsum dolor sir amet, vconatectus labandito ala pasto",
+      "price": 270000,
+      "src": "https://manage.schofficial.com/assets/images/product/skelly-bpb-grey-2.jpg",
+      "id": 12
+    },
+    {
+      "productId": 9,
+      "username": "haniful",
+      "quantity": 2,
+      "name": "Jacket Black",
+      "desc": "llorem ipsum dolor sir amet, vconatectus labandito ala pasto",
+      "price": 370000,
+      "src": "https://manage.schofficial.com/assets/images/product/dustpan-crj-black-2.jpg",
+      "id": 13
+    }
+  ]
+}

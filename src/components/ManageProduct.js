@@ -27,7 +27,7 @@ class ManageProduct extends Component{
     addProduct = () => {
         const namanya = this.name.value
         const descnya = this.desc.value
-        const pricenya = this.price.value
+        const pricenya = parseInt(this.price.value)
         const pictnya = this.pict.value
 
         console.log(namanya);
@@ -88,7 +88,7 @@ class ManageProduct extends Component{
                     <td>{i + 1}</td>
                     <td>{item.name}</td>
                     <td>{item.desc}</td>
-                    <td>{item.price}</td>
+                    <td>{`Rp.${item.price.toLocaleString("in")}`}</td>
                     <td><img className="list" src={item.src} alt={item.desc}></img></td>
                     <td>
                         <button onClick ={() => {this.onEdit(item.id)}}className="btn btn-primary mr-2">Edit</button>

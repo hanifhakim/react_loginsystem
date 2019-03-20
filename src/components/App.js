@@ -3,12 +3,17 @@ import {BrowserRouter, Route} from 'react-router-dom'
 import cookies from 'universal-cookie'
 import {connect} from 'react-redux'
 
+
 import Header from './Header'
 import Login from './Login'
 import Register from './Register'
 import Home from './Home'
 import ManageProduct from './ManageProduct'
+// import ProductItem from './ProductItem'
+import DetailProduct from './DetailProduct'
 import {keepLogin} from '../actions'
+import Cart from './Cart';
+
 
 const cookie = new cookies()
 
@@ -28,6 +33,7 @@ class App extends Component{
 
     render(){
         return(
+                    
             <BrowserRouter>
                 <div>
                     <Header/>
@@ -35,8 +41,13 @@ class App extends Component{
                     <Route path="/login" component={Login}/>
                     <Route path="/register" component={Register}/>
                     <Route path="/manageproduct" component={ManageProduct}/>
+                    {/* <Route path="/productitem" component={ProductItem}/>  tidak perlu, karena bukan komponen yg berdiri sendiri*/}
+                    <Route path="/detailproduct/:asdfg" component={DetailProduct}/>
+                    <Route path="/cart" component={Cart}/>
+                    {/* <Route path="/checkout" component={Checkout}/> */}
                 </div>
             </BrowserRouter> 
+                    // </IntlProvider>
         )
     }
 }

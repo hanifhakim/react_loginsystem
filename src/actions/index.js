@@ -25,15 +25,20 @@ export const onLoginClick = (user, pass) => {
             // penyederhaan karena property dan value sama
           });
           // Membuat sebuah file cookie dengan nama masihLogin, dan valuenya adalah username yg login
-                // path : "/" agar dapat diakses di setiap component
-          cookie.set('masihLogin', username, {path:'/'})
+          // path : "/" agar dapat diakses di setiap component
+          cookie.set('masihLogin', username, { path: '/' })
 
         } else {
           // jika data tidak ditemukan
-         dispatch({
-           type: "AUTH_ERROR",
-           payload: "USERNAME AND PASSWORD NOT MACTH"
-         });
+          dispatch({
+            type: "AUTH_ERROR",
+            payload: "USERNAME AND PASSWORD NOT MACTH"
+          });
+          setTimeout(() => {
+            dispatch({
+              type: "AUTH_OUT",
+            })
+          }, 2000);
         }
       })
       .catch(err => {
@@ -58,47 +63,47 @@ export const onTimeOut = () => {
 }
 
 export const onRegist = (user, email, pass) => {
-    return dispatch => {
-      axios
+  return dispatch => {
+    axios
       .get("http://localhost:1996/users", {
         params: {
           username: user,
         }
       }).then(res => {
-        if(res.data.length === 0){
+        if (res.data.length === 0) {
           axios.post("http://localhost:1996/users", {
             username: user,
             email: email,
             password: pass
-        }).then(res =>{
+          }).then(res => {
             dispatch({
-              type:"AUTH_SUCCESS",
-              payload:"REGISTRATION SUCCEDED"
+              type: "AUTH_SUCCESS",
+              payload: "REGISTRATION SUCCEDED"
             });
             // setelah tiga detik akan kirim action untuk menghapus pesan error dan success
-                // ini akan menyebabkan component render ulang dan menghilangkan pesan error pada
-                // login dan register
+            // ini akan menyebabkan component render ulang dan menghilangkan pesan error pada
+            // login dan register
             setTimeout(() => {
               dispatch({
                 type: "AUTH_OUT"
               })
             }, 2000);
-            
-        }).catch(err =>{
+
+          }).catch(err => {
             console.log(err);
-            
-        })
-          
+
+          })
+
         } else {
-         dispatch({
-           type:"AUTH_ERROR",
-           payload: "USERNAME HAS BEEN TAKEN"
-         })
+          dispatch({
+            type: "AUTH_ERROR",
+            payload: "USERNAME HAS BEEN TAKEN"
+          })
         }
       })
 
-   
-    }
+
+  }
 }
 
 export const keepLogin = (user) => {
@@ -108,15 +113,33 @@ export const keepLogin = (user) => {
         username: user
       }
     })
-      .then(res=>{
-        if(res.data.length > 0) {
+      .then(res => {
+        // console.log(res.data);
+
+        if (res.data.length > 0) {
           dispatch({
             type: "LOGIN_SUCCESS",
-            payload: {username:user}
+            payload: { username: user }
           })
         }
       })
   }
 }
+
+// export const searchName = (input) => {
+//   return dispatch => {
+//     axios.get('http://localhost:1996/product',{
+//       params:{
+//         name: input
+//       }
+//     }).then((res)=>{
+//       console.log(res.data[0]);
+
+//     }).catch(err=>{
+//       console.log("can't find the data");
+
+//     })
+//   }
+// }
 
 
